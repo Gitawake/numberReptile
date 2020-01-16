@@ -219,7 +219,7 @@ class Ui(object):
                                 # 重置按钮颜色
                                 white_button = tk.Button(second_pages1, text=Ui.prize[get_prizes1], width=10)
                                 white_button.grid(row=row1, column=column1, padx=10, pady=5)
-        # 定义一个线程用于变成效果
+        # 定义一个线程用于抽奖中的效果
         discoloration = threading.Thread(target=turntable)
         # 运行线程
         discoloration.start()
