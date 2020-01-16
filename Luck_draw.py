@@ -94,6 +94,7 @@ class Ui(object):
             else:
                 # 弹窗提示
                 tk.messagebox.showerror('提示', '奖品不能为空哦~')
+
         # 定义添加按钮触发show函数
         tk.Button(first_page2, text="添加", width=5, command=show).grid(row=1, column=2)
 
@@ -150,6 +151,7 @@ class Ui(object):
             second_pages1.destroy()
             # 调用奖品设置函数
             Ui.prize_setting(self)
+
         # 创建重新开始抽奖按钮
         tk.Button(second_pages, text="重新抽奖", width=10, command=restart).pack()
         # 创建重新设置奖品按钮
@@ -169,7 +171,8 @@ class Ui(object):
                 # 判断获取的自增函数小于奖品列表的总数
                 if get_prizes < len(Ui.prize):
                     # 循环放置奖品
-                    tk.Button(second_pages1, text=Ui.prize[get_prizes], width=10).grid(row=row, column=column, padx=10, pady=5)
+                    button = tk.Button(second_pages1, text=Ui.prize[get_prizes], width=10)
+                    button.grid(row=row, column=column, padx=10, pady=5)
 
         def turntable():
             """
@@ -219,6 +222,7 @@ class Ui(object):
                                 # 重置按钮颜色
                                 white_button = tk.Button(second_pages1, text=Ui.prize[get_prizes1], width=10)
                                 white_button.grid(row=row1, column=column1, padx=10, pady=5)
+
         # 定义一个线程用于抽奖中的效果
         discoloration = threading.Thread(target=turntable)
         # 运行线程
