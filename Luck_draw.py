@@ -38,7 +38,7 @@ class Ui(object):
         """
         # 开始之前先重置奖品列表为空
         Ui.prize.clear()
-        # 重置当前添加的奖品是第几个为1
+        # 重置当前添加的奖品为1
         Ui.current = 1
         # 创建一个frame用于放置按钮
         first_pagenter_prizes = tk.Frame(self.window)
